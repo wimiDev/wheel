@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "pointbg",
+    "texture": "180507cc-35da-423e-b5d5-e2969bb1ceb9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      158,
+      158
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      158,
+      158
+    ]
+  }
+}

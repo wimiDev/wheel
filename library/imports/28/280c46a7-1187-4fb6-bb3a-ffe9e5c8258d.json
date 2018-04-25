@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "reconverbg",
+    "texture": "b19a86eb-6938-4f9f-a699-d503e1da8cd5",
+    "atlas": "",
+    "rect": [
+      12,
+      12,
+      582,
+      360
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      606,
+      384
+    ]
+  }
+}

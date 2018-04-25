@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "recover_item",
+    "texture": "a31d5bca-64ff-4a3e-ab7f-326f81755c78",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      591,
+      57
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      591,
+      57
+    ]
+  }
+}

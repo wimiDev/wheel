@@ -1,0 +1,22 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "boradcardbg",
+    "texture": "6663b6df-0664-4eab-968b-425d14c07484",
+    "atlas": "",
+    "rect": [
+      12,
+      12,
+      582,
+      76
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      606,
+      100
+    ]
+  }
+}
