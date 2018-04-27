@@ -18,7 +18,8 @@ cc.Class({
         setp: 51.4,
         curSpeed: 0,
         timer1: 0,
-        mysScheduler: null
+        mysScheduler: null,
+        listScript: null
     },
 
     circleRun: function circleRun(speed) {
@@ -49,11 +50,13 @@ cc.Class({
         var rotate = (setp - 1) * this.setp % 360;
         var are = 51;
         var curRotate = -this.circle.rotation % 360;
-        cc.log("curRotate = %s, rotate = %s", curRotate, rotate);
+        // cc.log("curRotate = %s, rotate = %s",curRotate, rotate)
         if (Math.abs(curRotate - rotate) <= 3) {
             var cirecleNode = this.circle;
             cirecleNode.stopAllActions();
             this.resetTimer1();
+            cc.log(this.listScript);
+            this.listScript.addItem();
             cc.log("-------- stoped all -------");
         }
     },
@@ -72,6 +75,9 @@ cc.Class({
         cc.log("--------- game start -----------");
         this.myScheduler = cc.director.getScheduler();
         this.startRandom();
+        cc.log("-------------- getrecarbg -------------");
+        cc.log(this.node.getChildByName("main"));
+        // this.listScript = this.node.getChildByName("recarbg")
     },
     start: function start() {},
     startTimer1: function startTimer1(time) {
@@ -101,7 +107,7 @@ cc.Class({
         }
         if (this.timer1 >= 4) {
             if (this.speed - this.setp <= 1) {
-                cc.log("------------ will be stop ---------");
+                // cc.log("------------ will be stop ---------");
                 this.cirecleStopToSetp(this._youGetNum);
             }
         }

@@ -32,7 +32,7 @@ cc.Class({
     		let item = cc.instantiate(this.itemTemplate);
     		this.content.addChild(item);
     		item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
-    		item.getComponent('Item').updateItem(i, i);
+    		// item.getComponent('Item').updateItem(i, i);
             this.items.push(item);
     	}
     },
@@ -59,7 +59,7 @@ cc.Class({
                     items[i].setPositionY(items[i].y + offset );
                     let item = items[i].getComponent('Item');
                     let itemId = item.itemID - items.length; // update item id
-                    item.updateItem(i, itemId);
+                    // item.updateItem(i, itemId);
                 }
             } else {
                 // if away from buffer zone and not reaching bottom of content
@@ -67,7 +67,7 @@ cc.Class({
                     items[i].setPositionY(items[i].y - offset );
                     let item = items[i].getComponent('Item');
                     let itemId = item.itemID + items.length;
-                    item.updateItem(i, itemId);
+                    // item.updateItem(i, itemId);
                 }
             }
         }
