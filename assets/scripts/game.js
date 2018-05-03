@@ -60,7 +60,7 @@ cc.Class({
             var cirecleNode = this.circle;
             cirecleNode.stopAllActions();
             this.resetTimer1();
-            var item = this.createItem("哈哈哈",250,0)
+            var item = this.createItem("一切随缘",this._youGetNum,0)
             this.listScript.pushToList(item)
             cc.log("-------- stoped all -------")
         }
@@ -79,8 +79,6 @@ cc.Class({
 // LIFE-CYCLE CALLBACKS:
      onLoad () {
         cc.log("--------- game start -----------");
-        this.startRandom();
-        cc.log("-------------- getrecarbg -------------");
         var recarbg = cc.find("main/recarbg",this.node); 
         this.listScript = recarbg.getComponent("ListViewCtrl"); 
         cc.log(this.listScript);
@@ -92,6 +90,7 @@ cc.Class({
 
     startTimer1(time){
         this.timer1 = time || 0;
+        this.unschedule(this.sch1s);
         this.schedule(this.sch1s,1);
         cc.log("----------- startTimer1 ----------");
     },

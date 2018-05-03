@@ -115,8 +115,8 @@
     "relativePath": "texture\\unknow1.png"
   },
   "729ebdb4-eb0b-4451-91eb-ea67f1de533e": {
-    "asset": 1525341718530,
-    "meta": 1525341718545,
+    "asset": 1525352516138,
+    "meta": 1525352516146,
     "relativePath": "scenes\\game.fire"
   },
   "03d7b3dc-0ffc-4217-8e7c-b50ee829cc30": {
@@ -340,13 +340,38 @@
     "relativePath": "scripts\\listview\\ListViewCtrl.js"
   },
   "3bc7e8ce-109a-48de-9e56-c2682b33a3f4": {
-    "asset": 1525341568444,
-    "meta": 1525341573596,
+    "asset": 1525346738677,
+    "meta": 1525346781432,
     "relativePath": "scripts\\listview\\item.js"
   },
+  "1876ee36-5467-4361-b2ef-53a1260033c4": {
+    "asset": 1525347214393,
+    "meta": 1525347214418,
+    "relativePath": "texture\\btn_go.png"
+  },
   "60d2e9a0-f396-422f-be7d-5f23e8956b51": {
-    "asset": 1525341676126,
-    "meta": 1525341696708,
+    "asset": 1525347393642,
+    "meta": 1525347396869,
     "relativePath": "scripts\\game.js"
+  },
+  "5ac96c48-cc32-4725-b16b-d70549c73c7d": {
+    "asset": 1525348792748,
+    "meta": 1525348792789,
+    "relativePath": "texture\\game_bg1.png"
+  },
+  "d367d2f3-f19d-46eb-9f2b-9fb3ad44f3ac": {
+    "asset": 1525349634188,
+    "meta": 1525349634226,
+    "relativePath": "texture\\windmil.png"
+  },
+  "598f52e7-4a54-48dc-99ea-a1071db76998": {
+    "asset": 1525350981647,
+    "meta": 1525350991610,
+    "relativePath": "scripts\\light.js"
+  },
+  "275cdd35-3740-42f5-b499-1acc02b62f0f": {
+    "asset": 1525352449670,
+    "meta": 1525352453831,
+    "relativePath": "scripts\\broadcast.js"
   }
 }

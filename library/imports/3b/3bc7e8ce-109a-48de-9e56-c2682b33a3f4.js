@@ -25,16 +25,16 @@ cc.Class({
 
     start: function start() {},
     setTilp: function setTilp(str) {
-        this.tilp.string = str;
+        this.tilp.getComponent(cc.Label).string = str;
     },
     setNum: function setNum(str) {
-        this.num.string = str;
+        this.num.getComponent(cc.Label).string = str;
     },
     updateItem: function updateItem(tilp, num, id) {
         cc.log("--------------updateItem------------");
         this.id = 0;
-        this.setTilp("哈哈哈哈");
-        this.setNum("0999999");
+        this.setTilp(tilp);
+        this.setNum(num);
     }
 }
 // update (dt) {},
