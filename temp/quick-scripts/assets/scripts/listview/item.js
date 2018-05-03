@@ -15,7 +15,8 @@ cc.Class({
         num: {
             default: null,
             type: cc.Node
-        }
+        },
+        id: -1
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -28,6 +29,12 @@ cc.Class({
     },
     setNum: function setNum(str) {
         this.num.string = str;
+    },
+    updateItem: function updateItem(tilp, num, id) {
+        cc.log("--------------updateItem------------");
+        this.id = 0;
+        this.setTilp("哈哈哈哈");
+        this.setNum("0999999");
     }
 }
 // update (dt) {},

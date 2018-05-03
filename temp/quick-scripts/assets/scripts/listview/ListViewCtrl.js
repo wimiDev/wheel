@@ -2,16 +2,16 @@
 cc._RF.push(module, '92413SSlgFNI6+1sbIZR+fm', 'ListViewCtrl', __filename);
 // scripts/listview/ListViewCtrl.js
 
-'use strict';
+"use strict";
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        itemTemplate: { // item template to instantiate other items
-            default: null,
-            type: cc.Node
-        },
+        // itemTemplate: { // item template to instantiate other items
+        //     default: null,
+        //     type: cc.Node
+        // },
         scrollView: {
             default: null,
             type: cc.ScrollView
@@ -26,22 +26,18 @@ cc.Class({
     onLoad: function onLoad() {
         this.content = this.scrollView.content;
         this.items = []; // array to store spawned items
-        this.initialize();
         this.updateTimer = 0;
         this.updateInterval = 0.2;
         this.lastContentPosY = 0; // use this variable to detect if we are scrolling up or down
+        this.initialize();
     },
 
     initialize: function initialize() {
-        this.content.height = this.totalCount * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
-        for (var i = 0; i < this.spawnCount; ++i) {
-            // spawn items, we only need to do this once
-            var item = cc.instantiate(this.itemTemplate);
-            this.content.addChild(item);
-            item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1));
-            // item.getComponent('Item').updateItem(i, i);
-            this.items.push(item);
-        }
+        //   var item = cc.instantiate(this.itemTemplate)
+        //   item.x = 0
+        //   item.y = 0
+        //   cc.log("添加一个item")
+        //   this.pushToList(item)
     },
 
     getPositionInView: function getPositionInView(item) {
@@ -51,37 +47,7 @@ cc.Class({
         return viewPos;
     },
 
-    update: function update(dt) {
-        this.updateTimer += dt;
-        if (this.updateTimer < this.updateInterval) return; // we don't need to do the math every frame
-        this.updateTimer = 0;
-        var items = this.items;
-        var buffer = this.bufferZone;
-        var isDown = this.scrollView.content.y < this.lastContentPosY; // scrolling direction
-        var offset = (this.itemTemplate.height + this.spacing) * items.length;
-        for (var i = 0; i < items.length; ++i) {
-            var viewPos = this.getPositionInView(items[i]);
-            if (isDown) {
-                // if away from buffer zone and not reaching top of content
-                if (viewPos.y < -buffer && items[i].y + offset < 0) {
-                    items[i].setPositionY(items[i].y + offset);
-                    var item = items[i].getComponent('Item');
-                    var itemId = item.itemID - items.length; // update item id
-                    // item.updateItem(i, itemId);
-                }
-            } else {
-                // if away from buffer zone and not reaching bottom of content
-                if (viewPos.y > buffer && items[i].y - offset > -this.content.height) {
-                    items[i].setPositionY(items[i].y - offset);
-                    var _item = items[i].getComponent('Item');
-                    var _itemId = _item.itemID + items.length;
-                    // item.updateItem(i, itemId);
-                }
-            }
-        }
-        // update lastContentPosY
-        this.lastContentPosY = this.scrollView.content.y;
-    },
+    update: function update(dt) {},
 
     scrollEvent: function scrollEvent(sender, event) {
         switch (event) {
@@ -118,20 +84,23 @@ cc.Class({
         }
     },
 
-    addItem: function addItem() {
-        this.content.height = (this.totalCount + 1) * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
-        this.totalCount = this.totalCount + 1;
-    },
-
-    removeItem: function removeItem() {
-        if (this.totalCount - 1 < 30) {
-            cc.error("can't remove item less than 30!");
-            return;
+    //item is node
+    pushToList: function pushToList(item) {
+        var height = item.height + this.spacing;
+        cc.log("item.height = %s", height);
+        item.y = this.lastContentPosY - this.spacing - item.height / 2;
+        item.x = 0; //this.content.width/2
+        this.lastContentPosY -= height;
+        this.items.push(item);
+        this.content.width = item.width;
+        if (Math.abs(this.lastContentPosY) > this.content.height) {
+            this.content.height += height;
         }
-
-        this.content.height = (this.totalCount - 1) * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
-        this.totalCount = this.totalCount - 1;
+        cc.log(this.content.height);
+        this.content.addChild(item);
     },
+
+    removeItem: function removeItem() {},
 
     scrollToFixedPosition: function scrollToFixedPosition() {
         this.scrollView.scrollToOffset(cc.p(0, 500), 2);

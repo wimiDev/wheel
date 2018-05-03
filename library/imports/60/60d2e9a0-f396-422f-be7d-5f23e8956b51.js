@@ -13,7 +13,10 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-
+        itemTemplate: {
+            default: null,
+            type: cc.Node
+        },
         curRotate: 0,
         setp: 51.4,
         curSpeed: 0,
@@ -46,6 +49,13 @@ cc.Class({
         cirecleNode.runAction(cc.repeatForever(seq));
         return;
     },
+    createItem: function createItem(tilp, num, id) {
+        var item = cc.instantiate(this.itemTemplate);
+        item.x = 0;
+        item.y = 0;
+        item.getComponent("item").updateItem(tilp, num, 0);
+        return item;
+    },
     cirecleStopToSetp: function cirecleStopToSetp(setp) {
         var rotate = (setp - 1) * this.setp % 360;
         var are = 51;
@@ -55,8 +65,8 @@ cc.Class({
             var cirecleNode = this.circle;
             cirecleNode.stopAllActions();
             this.resetTimer1();
-            cc.log(this.listScript);
-            this.listScript.addItem();
+            var item = this.createItem("哈哈哈", 250, 0);
+            this.listScript.pushToList(item);
             cc.log("-------- stoped all -------");
         }
     },
@@ -73,21 +83,21 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
     onLoad: function onLoad() {
         cc.log("--------- game start -----------");
-        this.myScheduler = cc.director.getScheduler();
         this.startRandom();
         cc.log("-------------- getrecarbg -------------");
-        cc.log(this.node.getChildByName("main"));
-        // this.listScript = this.node.getChildByName("recarbg")
+        var recarbg = cc.find("main/recarbg", this.node);
+        this.listScript = recarbg.getComponent("ListViewCtrl");
+        cc.log(this.listScript);
     },
     start: function start() {},
     startTimer1: function startTimer1(time) {
         this.timer1 = time || 0;
-        this.myScheduler.schedule(this.sch1s, this, 1);
+        this.schedule(this.sch1s, 1);
         cc.log("----------- startTimer1 ----------");
     },
     resetTimer1: function resetTimer1(time) {
         this.timer1 = time || 0;
-        this.myScheduler.unschedule(this.sch1s, this);
+        this.unschedule(this.sch1s);
         cc.log("-------- resetTimer1 ---------");
     },
     sch1s: function sch1s(dt) {
