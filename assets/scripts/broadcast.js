@@ -23,8 +23,8 @@ cc.Class({
 
         msgQue:null,
 
-        pos1:cc.Vec2(0,0),
-        pos2:cc.Vec2(0,-58),
+        pos1:cc.p(0,0),
+        pos2:cc.p(0,-58),
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -34,38 +34,70 @@ cc.Class({
     start () {
        this.msgQue = new Array();
        this.index = 1;
-       this.bcCp1 = this.info1.getComponent("cc.Label");
+       this.bcCp1 = this.info1.getComponent(cc.Label);
        this.bcCp1.string = "吃饱就可以睡觉了";
-       this.bcCp2 = this.info2.getComponent("cc.Label");
+       this.bcCp2 = this.info2.getComponent(cc.Label);
        this.bcCp2.string  = "";
-       this.schedule(this.sch1s,1)
+       this.schedule(this.sch1s,1);
+       this.windmilRun(true);
+       cc.log("broadcast start");
     },
 
     baradcastMsg (str) {
+        cc.log("push msg:%s to que",str);
         this.msgQue.push(str);
     },
 
     sch1s () {
-        if (this.length <= 0){
+        // cc.log("broadcast que len >>>> %s",this.msgQue.length)
+        // cc.log("info2.x >>> %s,info2.y >>> %s",this.info2.position.x,this.info2.position.y)
+        if (this.msgQue.length <= 0){
             return;
         }
-        var str = this.msgQue.pop()
-        this.showMsg(str)
+        cc.log("broadcast update~");
+        var str = this.msgQue.pop();
+        this.showMsg(str);
     },
 
     showMsg (str) {
+        cc.log("broadcast showMsg >>>>>> %s", str)
+        this.tilpSwing(true)
         if(this.index == 1){
-            this.info1.runAction(cc.moveBy(0.2,cc.Vec2(0,70)))
-            this.info2.position = pos2
-            this.info2.runAction(cc.moveBy(0.2,cc.Vec2(0,58)))
+            this.info1.runAction(cc.moveBy(0.2,cc.p(0,70)));
+            this.info2.position = this.pos2;
+            this.info2.getComponent(cc.Label).string = str;
+            this.info2.runAction(cc.moveBy(0.2,cc.p(0,58)));
             this.index = 2;
         }
         else{
-            this.info2.runAction(cc.moveBy(0.2,cc.Vec2(0,70)))
-            this.info1.position = pos2
-            this.info1.runAction(cc.moveBy(0.2,cc.Vec2(0,58)))
+            this.info2.runAction(cc.moveBy(0.2,cc.p(0,70)));
+            this.info1.getComponent(cc.Label).string = str;
+            this.info1.position = this.pos2;
+            this.info1.runAction(cc.moveBy(0.2,cc.p(0,58)));
             this.index = 1;
         }
-    }
+    },
+
+    tilpSwing (enable) {
+        if(!enable)
+        {
+            this.tilp.stopAllActions()
+            return;
+        }
+        var swingLeft = cc.rotateTo(0.1,-5);
+        var swingRight = cc.rotateTo(0.1,5);
+        var swing = cc.repeat(cc.sequence(swingLeft, swingRight),5)
+        this.tilp.runAction(swing);
+    },
+
+    windmilRun (enable) {
+        if(!enable)
+        {
+            this.windmil.stopAllActions()
+            return;
+        }
+        var roateAct = cc.repeatForever(cc.rotateBy(5,360))
+        this.windmil.runAction(roateAct)
+    },
     // update (dt) {},
 });

@@ -12,6 +12,10 @@ cc.Class({
             default:null,
             type:cc.Node, 
         },
+        broadcast:{
+            default:null,
+            type:cc.Node,
+        },
         curRotate: 0,
         setp: 51.4,
         curSpeed: 0,
@@ -20,16 +24,27 @@ cc.Class({
         listScript : null,
     },
 
+    // LIFE-CYCLE CALLBACKS:
+     onLoad () {
+        cc.log("--------- game start -----------");
+        var recarbg = cc.find("main/recarbg",this.node); 
+        this.listScript = recarbg.getComponent("ListViewCtrl");
+        var broadcastNode = cc.find("main/boradbg",this.node);
+        this.broadcastScript = broadcastNode.getComponent("broadcast")
+         },
+
+    start () {
+
+    },
  
     circleRun (speed) {
        if(!this.circle){ 
-
         cc.log("circle is null");
         return;
         }
         if (speed < 0 ){speed = 0}
         if(speed == this.setp){return ;}
-        cc.log("---------- circlerun -----------")
+        // cc.log("---------- circlerun -----------")
         speed = speed || 50;
         this.speed = speed;
         var cirecleNode = this.circle;
@@ -62,6 +77,7 @@ cc.Class({
             this.resetTimer1();
             var item = this.createItem("一切随缘",this._youGetNum,0)
             this.listScript.pushToList(item)
+            this.broadcastScript.baradcastMsg("谢谢你的成全")
             cc.log("-------- stoped all -------")
         }
     },
@@ -72,20 +88,10 @@ cc.Class({
     },
 
     startRandom () {
+        this.broadcastScript.baradcastMsg("有时间绝望，不如去吃肉")
         this._youGetNum  = Math.floor((cc.rand() % 6) + 1);
         cc.log("you get num = %d", this._youGetNum)
         this.startTimer1()
-    },
-// LIFE-CYCLE CALLBACKS:
-     onLoad () {
-        cc.log("--------- game start -----------");
-        var recarbg = cc.find("main/recarbg",this.node); 
-        this.listScript = recarbg.getComponent("ListViewCtrl"); 
-        cc.log(this.listScript);
-         },
-
-    start () {
-
     },
 
     startTimer1(time){
@@ -103,15 +109,15 @@ cc.Class({
 
     sch1s (dt){
         this.timer1 = this.timer1 + 1;
-        cc.log("timer1 time = %s,speed = %d", this.timer1, this.speed);
+        // cc.log("timer1 time = %s,speed = %d", this.timer1, this.speed);
         if (this.timer1 >= 4)
         {
-            cc.log("--------speed -- --------")
+            // cc.log("--------speed -- --------")
             this.circleRun(this.speed - this.timer1*10);
         }
         else
         {
-            cc.log("--------speed ++ --------")
+            // cc.log("--------speed ++ --------")
             this.circleRun(this.timer1*5 * this.setp);
         }
     },
