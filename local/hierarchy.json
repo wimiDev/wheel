@@ -21,7 +21,7 @@
       "id": "7cYPgcZWhM/JULcRmBVrft"
     },
     {
-      "folded": false,
+      "folded": true,
       "id": "a2EgjATMtGk4xJtRSaLPva"
     },
     {
@@ -29,11 +29,11 @@
       "id": "dcAGyJRptDurKANMY9XCaD"
     },
     {
-      "folded": false,
+      "folded": true,
       "id": "97T/Zn+rVFrbG/2vAfC1Rx"
     },
     {
-      "folded": true,
+      "folded": false,
       "id": "0fZApFWFtBtqTjelJisrCw"
     },
     {
@@ -43,6 +43,10 @@
     {
       "folded": true,
       "id": "16PO+3bEFA1atIVIeE7GfP"
+    },
+    {
+      "folded": true,
+      "id": "81Xvosh5VEeJbeBW0WYY5V"
     }
   ]
 }
