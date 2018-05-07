@@ -4,16 +4,19 @@ cc.Class({
 
     properties: {
         id:-1,
-        state:"off", 
+        state:"off",
+        lightOn : "resources/texture/light1.png", 
+        lightOff : "resources/texture/light2.png",
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+     onLoad () {
+         this.lightOn = "resources/texture/light1.png";
+         this.lightOff = "resources/texture/light2.png";
+     },
 
     start () {
-        this.lightOn = cc.url.raw("resources/texture/light1.png");
-        this.lightOff = cc.url.raw("resources/texture/light2.png");
         
     },
 
@@ -23,15 +26,15 @@ cc.Class({
     },
     
     on () {
-        cc.log("light[%s] on.",this.id)
         var spLight = this.getComponent(cc.Sprite);
-        spLight.spriteFrame.setTexture(this.lightOn);
+        // cc.log("light[%s] on.",this.id)
+        spLight.spriteFrame = new cc.SpriteFrame(cc.url.raw(this.lightOn));
     },
 
     off () {
-        cc.log("light[%s] off.",this.id)
+        // cc.log("light[%s] off.",this.id)
         var spLight = this.getComponent(cc.Sprite);
-        spLight.spriteFrame.setTexture(this.lightOff);
+        spLight.spriteFrame = new cc.SpriteFrame(cc.url.raw(this.lightOff));
     },
 
     flash (){

@@ -50,7 +50,7 @@
     "relativePath": "scripts"
   },
   "0ba81120-5ff8-471c-ad24-fa9eab1c9f6a": {
-    "asset": 1525349634193,
+    "asset": 1525511103364,
     "meta": 1525329096863,
     "relativePath": "resources\\texture"
   },
@@ -115,8 +115,8 @@
     "relativePath": "resources\\texture\\unknow1.png"
   },
   "729ebdb4-eb0b-4451-91eb-ea67f1de533e": {
-    "asset": 1525511771971,
-    "meta": 1525511771999,
+    "asset": 1525695154977,
+    "meta": 1525695155007,
     "relativePath": "scenes\\game.fire"
   },
   "03d7b3dc-0ffc-4217-8e7c-b50ee829cc30": {
@@ -200,14 +200,9 @@
     "relativePath": "scripts\\data"
   },
   "1202b4d9-4b11-4fcf-a583-cc6809ec55f6": {
-    "asset": 1525505773812,
+    "asset": 1525505778396,
     "meta": 1525505773835,
     "relativePath": "resources"
-  },
-  "598f52e7-4a54-48dc-99ea-a1071db76998": {
-    "asset": 1525509474914,
-    "meta": 1525509661406,
-    "relativePath": "scripts\\light.js"
   },
   "71561142-4c83-4933-afca-cb7a17f67053": {
     "asset": 1515662864000,
@@ -404,9 +399,34 @@
     "meta": 1525511103380,
     "relativePath": "resources\\texture\\5w_1.png"
   },
+  "8e13fc5b-7f05-4ebe-83f1-9b4b34b1f7cd": {
+    "asset": 1525685645489,
+    "meta": 1525685681013,
+    "relativePath": "scripts\\view\\msgList.js"
+  },
+  "93dedee3-7ad6-42ba-920c-c7cbd33f8f92": {
+    "asset": 1525685693120,
+    "meta": 1525685693121,
+    "relativePath": "resources\\data"
+  },
+  "7657282a-1fef-4ab5-8a5c-91d1cb2ef768": {
+    "asset": 1525686646196,
+    "meta": 1525686808791,
+    "relativePath": "resources\\data\\msgList.json"
+  },
+  "5b9ea51d-0b55-43fb-b302-8c27f25e4c33": {
+    "asset": 1525694481026,
+    "meta": 1525694490733,
+    "relativePath": "scripts\\view\\viewcoin.js"
+  },
+  "598f52e7-4a54-48dc-99ea-a1071db76998": {
+    "asset": 1525694626320,
+    "meta": 1525694637843,
+    "relativePath": "scripts\\light.js"
+  },
   "fd27af97-dd75-4a60-bcee-f7213bfdf32e": {
-    "asset": 1525511625350,
-    "meta": 1525511634660,
+    "asset": 1525694635178,
+    "meta": 1525694637844,
     "relativePath": "scripts\\lightctrl.js"
   }
 }

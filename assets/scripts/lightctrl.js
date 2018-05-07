@@ -29,16 +29,20 @@ cc.Class({
         }
         this.turnAll(false);
         this.schedule(this.sch01,0.01);
+        this.lights[1].getComponent("light").on();
+        this.lights[2].getComponent("light").on();
+        this.lights[3].getComponent("light").on();
     },
 
     circleRun() {
         if(this.circleIndex > this.rgHeight || !this.circleIndex)
-        {
+        {   
+            this.turnAll(false);
             this.circleIndex = this.rgLow;
         }
         // cc.log("this.lights[%s] = %s", this.circleIndex, this.lights[this.circleIndex])
-        this.lights[this.circleIndex].getComponent("light").off();
-        // this.circleIndex += 1;
+        this.lights[this.circleIndex].getComponent("light").on();
+        this.circleIndex += 1;
 
     },
 
@@ -55,7 +59,7 @@ cc.Class({
     },
 
     sch01 () {
-        if(this.time % 100 == 0)
+        if(this.time % 20 == 0)
         {
             this.circleRun();
         }
