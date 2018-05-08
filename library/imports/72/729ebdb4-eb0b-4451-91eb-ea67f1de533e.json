@@ -21,7 +21,7 @@
         "__id__": 139
       },
       {
-        "__id__": 150
+        "__id__": 151
       }
     ],
     "_tag": -1,
@@ -77,6 +77,9 @@
       },
       {
         "__id__": 149
+      },
+      {
+        "__id__": 150
       }
     ],
     "_prefab": null,
@@ -5030,6 +5033,17 @@
     "state": "dnt"
   },
   {
+    "__type__": "8e13fxbfwVOvoPxm0s0sffN",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "tilpList": null,
+    "hisList": null
+  },
+  {
     "__type__": "cc.Node",
     "_name": "lightTemp",
     "_objFlags": 0,
@@ -5041,14 +5055,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 151
+        "__id__": 152
       },
       {
-        "__id__": 152
+        "__id__": 153
       }
     ],
     "_prefab": {
-      "__id__": 153
+      "__id__": 154
     },
     "_id": "f7MFB4OlFJFqLtbltvt8SV",
     "_opacity": 255,
@@ -5091,7 +5105,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 150
+      "__id__": 151
     },
     "_enabled": true,
     "_spriteFrame": {
@@ -5117,7 +5131,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 150
+      "__id__": 151
     },
     "_enabled": true,
     "id": -1,
@@ -5128,7 +5142,7 @@
   {
     "__type__": "cc.PrefabInfo",
     "root": {
-      "__id__": 150
+      "__id__": 151
     },
     "asset": {
       "__uuid__": "b02fc516-eba0-42cd-82d8-dfe609d5e376"

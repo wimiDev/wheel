@@ -9,15 +9,15 @@
       "id": "fd0a93c1-dab3-4cc8-ba23-dd1070e01987"
     },
     {
-      "folded": false,
+      "folded": true,
       "id": "4499f395-bf61-4170-8b76-7997935f07d4"
     },
     {
-      "folded": false,
+      "folded": true,
       "id": "ff822952-89a4-4903-90a1-849ac21c59df"
     },
     {
-      "folded": true,
+      "folded": false,
       "id": "1202b4d9-4b11-4fcf-a583-cc6809ec55f6"
     },
     {
@@ -25,11 +25,15 @@
       "id": "118db743-46d6-4f08-8199-423ce520259d"
     },
     {
+      "folded": false,
+      "id": "93dedee3-7ad6-42ba-920c-c7cbd33f8f92"
+    },
+    {
       "folded": true,
       "id": "cef2bedf-a169-4789-ab03-634fe9c07b84"
     },
     {
-      "folded": false,
+      "folded": true,
       "id": "0ba81120-5ff8-471c-ad24-fa9eab1c9f6a"
     },
     {
@@ -54,7 +58,7 @@
     },
     {
       "folded": true,
-      "id": "3157d6a5-76d3-4dfa-94e7-aa0d8c0bb752"
+      "id": "aeed39ff-30e0-432a-b9af-663909755088"
     },
     {
       "folded": true,
@@ -62,19 +66,11 @@
     },
     {
       "folded": true,
-      "id": "aeed39ff-30e0-432a-b9af-663909755088"
+      "id": "3157d6a5-76d3-4dfa-94e7-aa0d8c0bb752"
     },
     {
       "folded": true,
-      "id": "8e69a8ac-853f-439e-bf4c-a12aa52e149b"
-    },
-    {
-      "folded": true,
-      "id": "cd5ed90d-1222-4b5f-b564-7fc8b6b50053"
-    },
-    {
-      "folded": true,
-      "id": "180507cc-35da-423e-b5d5-e2969bb1ceb9"
+      "id": "1a407e34-8e21-4559-ac58-de47c5c4916e"
     },
     {
       "folded": true,
@@ -82,11 +78,19 @@
     },
     {
       "folded": true,
-      "id": "50ee6781-8950-4052-a61e-8bcc7f0ee649"
+      "id": "180507cc-35da-423e-b5d5-e2969bb1ceb9"
     },
     {
       "folded": true,
-      "id": "1a407e34-8e21-4559-ac58-de47c5c4916e"
+      "id": "cd5ed90d-1222-4b5f-b564-7fc8b6b50053"
+    },
+    {
+      "folded": true,
+      "id": "8e69a8ac-853f-439e-bf4c-a12aa52e149b"
+    },
+    {
+      "folded": true,
+      "id": "50ee6781-8950-4052-a61e-8bcc7f0ee649"
     },
     {
       "folded": true,
@@ -107,10 +111,6 @@
     {
       "folded": true,
       "id": "a31d5bca-64ff-4a3e-ab7f-326f81755c78"
-    },
-    {
-      "folded": true,
-      "id": "93dedee3-7ad6-42ba-920c-c7cbd33f8f92"
     }
   ]
 }

@@ -3,21 +3,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+        tilpList : null,
+        hisList : null,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -25,7 +12,19 @@ cc.Class({
     // onLoad () {},
 
     start () {
-
+         this.tilpList = new Array();
+         this.hisList = new Array();
+         cc.loader.load(cc.url.raw("resources/data/msgList.json"), function(err,res){  
+            if (err) {  
+                cc.log("read file error");
+                 cc.log(err);  
+            }
+            else{  
+                 cc.log("read sussed");
+                 this.tilpList = res.tilpList;
+                 this.hisList = res.hisList;
+            }  
+        });  
     },
 
     // update (dt) {},
