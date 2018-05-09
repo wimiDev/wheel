@@ -3,29 +3,37 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        tilpList : null,
-        hisList : null,
+         tilpList : {
+             default : null,
+             type : Array, 
+         },
+         hisList : {
+             default : null,
+             type : Array,
+         },      
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
-
-    start () {
+     onLoad () {
          this.tilpList = new Array();
          this.hisList = new Array();
-         cc.loader.load(cc.url.raw("resources/data/msgList.json"), function(err,res){  
+         var self = this;
+         cc.loader.load(cc.url.raw("resources/data/msgList.json"), function(err,res){
             if (err) {  
-                cc.log("read file error");
-                 cc.log(err);  
+                cc.log("read file error"); 
             }
             else{  
-                 cc.log("read sussed");
-                 this.tilpList = res.tilpList;
-                 this.hisList = res.hisList;
+                 cc.log("read file ok");
+                 self.tilpList = res.tilpList
+                 self.hisList = res.hisList
             }  
-        });  
-    },
+         });  
+     },
 
+    start () {
+
+    },
+   
     // update (dt) {},
 });

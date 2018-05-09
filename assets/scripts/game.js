@@ -22,6 +22,7 @@ cc.Class({
         timer1 : 0,
         mysScheduler : null,
         listScript : null,
+        msgList : null,
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -30,7 +31,8 @@ cc.Class({
         var recarbg = cc.find("main/recarbg",this.node); 
         this.listScript = recarbg.getComponent("ListViewCtrl");
         var broadcastNode = cc.find("main/boradbg",this.node);
-        this.broadcastScript = broadcastNode.getComponent("broadcast")
+        this.broadcastScript = broadcastNode.getComponent("broadcast");
+        this.msgList = this.getComponent("msgList");
          },
 
     start () {
@@ -75,9 +77,11 @@ cc.Class({
             var cirecleNode = this.circle;
             cirecleNode.stopAllActions();
             this.resetTimer1();
-            var item = this.createItem("一切随缘",this._youGetNum,0)
-            this.listScript.pushToList(item)
-            this.broadcastScript.baradcastMsg("谢谢你的成全")
+            var itemStr = this.msgList.hisList[this._youGetNum - 1 % this.msgList.hisList.length];
+            var item = this.createItem(itemStr,this._youGetNum,0);
+            this.listScript.pushToList(item);
+            var bIndex  = this.random(0,this.msgList.tilpList.length)
+            this.broadcastScript.baradcastMsg(this.msgList.tilpList[bIndex])
             cc.log("-------- stoped all -------")
         }
     },
@@ -88,8 +92,9 @@ cc.Class({
     },
 
     startRandom () {
-        this.broadcastScript.baradcastMsg("有时间绝望，不如去吃肉")
-        this._youGetNum  = Math.floor((cc.rand() % 6) + 1);
+        var bIndex  = this.random(0,this.msgList.tilpList.length)
+        this.broadcastScript.baradcastMsg(this.msgList.tilpList[bIndex])
+        this._youGetNum  = this.random(1,7)
         cc.log("you get num = %d", this._youGetNum)
         this.startTimer1()
     },
@@ -131,5 +136,9 @@ cc.Class({
                 this.cirecleStopToSetp(this._youGetNum);
             }
         }
+    },
+    random (begin, end)
+    {
+       return Math.floor(Math.random()*(end - begin) + begin) ;
     },
 });
