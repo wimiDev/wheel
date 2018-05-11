@@ -19,16 +19,19 @@ cc.Class({
         spawnCount: 0, // how many items we actually spawn
         totalCount: 0, // how many items we need for the whole list
         spacing: 0, // space between each item
-        bufferZone: 0 // when item is away from bufferZone, we relocate it
+        bufferZone: 0, // when item is away from bufferZone, we relocate it
+        items: new Array()
+    },
+    start: function start() {
+        this.items = []; // array to store spawned items
     },
 
     // use this for initialization
     onLoad: function onLoad() {
         this.content = this.scrollView.content;
-        this.items = []; // array to store spawned items
         this.updateTimer = 0;
         this.updateInterval = 0.2;
-        this.lastContentPosY = 0; // use this variable to detect if we are scrolling up or down
+        this.lastContentPosY = 0;
         this.initialize();
     },
 

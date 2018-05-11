@@ -14,15 +14,17 @@ cc.Class({
         totalCount: 0, // how many items we need for the whole list
         spacing: 0, // space between each item
         bufferZone: 0, // when item is away from bufferZone, we relocate it
+        items: new Array(),
     },
-
+    start(){
+        this.items = []; // array to store spawned items
+    },
     // use this for initialization
     onLoad: function () {
     	this.content = this.scrollView.content;
-        this.items = []; // array to store spawned items
         this.updateTimer = 0;
         this.updateInterval = 0.2;
-        this.lastContentPosY = 0; // use this variable to detect if we are scrolling up or down
+        this.lastContentPosY = 0;
         this.initialize();
     },
 

@@ -39,7 +39,7 @@ cc.Class({
         this.msgQue = new Array();
         this.index = 1;
         this.bcCp1 = this.info1.getComponent(cc.Label);
-        this.bcCp1.string = "吃饱就可以睡觉了";
+        this.bcCp1.string = "专业贴膜，5块一张，了解一下";
         this.bcCp2 = this.info2.getComponent(cc.Label);
         this.bcCp2.string = "";
         this.schedule(this.sch1s, 1);
