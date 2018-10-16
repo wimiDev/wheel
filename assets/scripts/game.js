@@ -40,6 +40,10 @@ cc.Class({
         this.init();
     },
 
+    test(){
+
+    },
+
     init(){
         //init coin
         this.myCoin = this.storage.getMyCoin();
